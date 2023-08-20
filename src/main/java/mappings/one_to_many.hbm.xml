@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hibernate.Mappings.Assosiation_mapping.onetomany.Client" table="tbl_client">
+		<id name="id" column="client_id">
+			<generator class="identity"/>
+		</id>
+		<property name="name" column="client_name" type="string"/>
+		<property name="address" type="string"/>
+		<property name="lastUpdated" type="timestamp"/>
+		<set name="phnNos" cascade="all">
+			<key column="client_id"/>
+			<one-to-many class="com.hibernate.Mappings.Assosiation_mapping.onetomany.PhoneNo"/>
+		</set>
+	</class>
+	
+	<class name="com.hibernate.Mappings.Assosiation_mapping.onetomany.PhoneNo" table="tbl_phn_No">
+		<id name="number"/>
+		<property name="provider" type="string"/>
+		<property name="noType" type="string"/>
+	</class>
+</hibernate-mapping>
