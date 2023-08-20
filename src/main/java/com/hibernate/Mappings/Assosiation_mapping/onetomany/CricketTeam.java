@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderColumn;
 import javax.persistence.Table;
@@ -27,6 +28,7 @@ public class CricketTeam
 	private String state;
 	
 	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "cricket_player_table",joinColumns = @JoinColumn(referencedColumnName = "playerId"),inverseJoinColumns = @JoinColumn(referencedColumnName = "team_id"))
 	@JoinColumn(referencedColumnName = "team_id")
 	@OrderColumn(name = "rank")
 	@Column(name = "player")
