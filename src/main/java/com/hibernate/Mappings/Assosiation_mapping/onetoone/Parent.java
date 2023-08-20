@@ -28,39 +28,55 @@ public class Parent
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date lastupdated;
-	
+
 	public int getPid() {
 		return pid;
 	}
+
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
+
 	public String getStr() {
 		return str;
 	}
+
 	public void setStr(String str) {
 		this.str = str;
 	}
+
 	public Child getChild() {
 		return child;
 	}
+
 	public void setChild(Child child) {
 		this.child = child;
 	}
+
 	public Date getLastupdated() {
 		return lastupdated;
 	}
+
 	public void setLastupdated(Date lastupdated) {
 		this.lastupdated = lastupdated;
 	}
+
 	public Parent(String str, Child child, Date lastupdated) {
 		super();
 		this.str = str;
 		this.child = child;
 		this.lastupdated = lastupdated;
 	}
+
 	public Parent() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "Parent [pid=" + pid + ", str=" + str + ", lastupdated=" + lastupdated + "]";
+	}
+
 	
+		
 }
