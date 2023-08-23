@@ -12,12 +12,22 @@
 
 		<!-- Hibernate property -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</property>
-		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
 		<property name="hibernate.show_sql">true</property>
 
 		<!-- Pojo mapping -->
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Parent"/>
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Child"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Student"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Course"/>
+		
+<!-- 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.bidirectional.Address"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.bidirectional.Student"/>
+ -->		
+		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.unidirectional.Student"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.unidirectional.Address"/>
+		 -->
+		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Parent"
+		/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Child"/> -->
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Address"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Student"/>
 		 -->

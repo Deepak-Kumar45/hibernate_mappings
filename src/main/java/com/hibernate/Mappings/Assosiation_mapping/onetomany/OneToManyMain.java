@@ -15,6 +15,13 @@ public class OneToManyMain
 	{
 		Session session=Factory.getSession();
 		Transaction tx=null;
+		Student std=new Student("Fooldev", new Date("10/20/2201"), new Date());
+		List<Course> course=List.of(
+				new Course("DSA", 2, "Akash bhaiya"),
+				new Course("C++", 1, "Tarun bhaiya"),
+				new Course("OOPS", 1, "Naman sir"));
+		std.setCourses(course);
+		
 //		CricketTeam team= new CricketTeam("KKR", "Kolkata",  new Date());
 //		List<Player> players=List.of(new Player(2001, "Abc", "all rounder", 45),
 //									 new Player(2002, "def", "bowler", 32),
@@ -28,10 +35,10 @@ public class OneToManyMain
 		
 		try {
 			tx=session.beginTransaction();
-//			Integer id= (Integer)session.save(team);
-//			System.out.println("Data has been saved with ID "+id);
-			CricketTeam team=session.load(CricketTeam.class, 2);
-			System.out.println(team);
+			Integer id= (Integer)session.save(std);
+			System.out.println("Data has been saved with ID "+id);
+//			CricketTeam team=session.load(CricketTeam.class, 2);
+//			System.out.println(team);
 			
 			tx.commit();
 		}catch (Exception e) {
