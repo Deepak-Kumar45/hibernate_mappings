@@ -27,11 +27,12 @@ public class CricketTeam
 	private String teamName;
 	private String state;
 	
+
+//	@JoinTable(name = "cricket_player_table",joinColumns = @JoinColumn(referencedColumnName = "playerId"),inverseJoinColumns = @JoinColumn(referencedColumnName = "team_id"))
+//	@JoinColumn(referencedColumnName = "team_id")
+//	@OrderColumn(name = "rank")
+//	@Column(name = "player")
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "cricket_player_table",joinColumns = @JoinColumn(referencedColumnName = "playerId"),inverseJoinColumns = @JoinColumn(referencedColumnName = "team_id"))
-	@JoinColumn(referencedColumnName = "team_id")
-	@OrderColumn(name = "rank")
-	@Column(name = "player")
 	private List<Player> players;
 	
 	@Override

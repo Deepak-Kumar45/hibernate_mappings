@@ -16,8 +16,8 @@
 		<property name="hibernate.show_sql">true</property>
 
 		<!-- Pojo mapping -->
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Student"/>
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Course"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Product"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Details"/>
 		
 <!-- 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.bidirectional.Address"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.bidirectional.Student"/>

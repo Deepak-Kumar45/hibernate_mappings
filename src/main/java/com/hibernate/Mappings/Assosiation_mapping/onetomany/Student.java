@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "tbl_std_100")
@@ -26,9 +27,9 @@ public class Student {
 	@Temporal(TemporalType.DATE)
 	private Date dob;
 	
-//	@JoinTable(name = "std_course_100",joinColumns = @JoinColumn(referencedColumnName = "sid"),inverseJoinColumns = @JoinColumn(referencedColumnName = "course_id"))
-//	@JoinColumn(name = "course_id")
-
+	
+//	@JoinTable(name = "tbl_std_course_join",joinColumns = @JoinColumn(referencedColumnName = "sid",name="sid")
+//											, inverseJoinColumns = @JoinColumn(referencedColumnName = "course_id",name="c_id"))
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "std")
 	private List<Course> courses;
 //	if we do not want to create 
