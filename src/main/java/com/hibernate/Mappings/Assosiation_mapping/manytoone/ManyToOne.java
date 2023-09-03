@@ -15,15 +15,27 @@ public class ManyToOne {
 	public static void main(String[] args) {
 		Session ses=Factory.getSession();
 		Transaction tx=ses.beginTransaction();
-		Product p1=new Product("Shampoo", 2, new Date());
-		List<Details> details =new ArrayList<>();
-		details.add(new Details(101,"Dove", new Date("01/05/2001")));
-		details.add(new Details(102,"clinic plus", new Date("01/05/2009")));
-		details.add(new Details(103,"Paatene", new Date("01/05/2031")));
+//		Product p1=new Product("Shampoo", 2, new Date());
+//		
+//		Details d2=new Details("h1", new Date());
+//		Details d3=new Details("h4", new Date());
+//		Details d4=new Details("h3", new Date());
+//		
+//		p1.setDetails(List.of(d2,d3,d4));
+//		
+//		d2.setProduct(p1);
+//		d3.setProduct(p1);
+//		d4.setProduct(p1);
+//		
+//		Integer id=(Integer)ses.save(p1);
+//		System.out.println("Data has been saved with Id "+id);
+//		Product p=ses.get(Product.class, 1);
+//		System.out.println(p);
+//		System.out.println(p.getDetails());
 		
-		p1.setDetails(details);
-		Integer id=(Integer)ses.save(p1);
-		System.out.println("Data has been saved with Id "+id);
+		Details d=ses.get(Details.class, 1);
+		System.out.println(d);
+		System.out.println(d.getProduct());
 		tx.commit();
 		ses.close();
 	}

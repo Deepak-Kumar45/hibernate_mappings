@@ -2,6 +2,7 @@ package com.hibernate.Mappings.Assosiation_mapping.manytoone;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,23 +17,24 @@ import javax.persistence.TemporalType;
 public class Details {
 	
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int did;
 	private String productType;
 	
 	@Temporal(TemporalType.DATE)
 	private Date expireDate;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "product_id")
 	private Product product;
 
-//	public int getDid() {
-//		return did;
-//	}
-//
-//	public void setDid(int did) {
-//		this.did = did;
-//	}
+	public int getDid() {
+		return did;
+	}
+
+	public void setDid(int did) {
+		this.did = did;
+	}
 
 	public String getProductType() {
 		return productType;
@@ -58,9 +60,8 @@ public class Details {
 		this.product = product;
 	}
 
-	public Details(int did,String productType, Date expireDate) {
+	public Details(String productType, Date expireDate) {
 		super();
-		this.did=did;
 		this.productType = productType;
 		this.expireDate = expireDate;
 	}
