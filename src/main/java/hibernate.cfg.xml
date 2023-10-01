@@ -17,8 +17,8 @@
 		<property name="hibernate.format_sql">true</property>
 
 		<!-- Pojo mapping -->
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Patient"/>
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Doctor"/>
+		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Patient"/>
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Doctor"/> -->
 		
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Product"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Details"/>
@@ -45,7 +45,7 @@
 		<!-- <mapping class="com.hibernate.Mappings.collection_mappings.AllCollectionMappingExample"/> 
 			<mapping class="com.hibernate.Mappings.collection_mappings.Free"/> -->
 		<!-- <mapping resource="mappings/collection_mapping.hbm.xml" /> -->
-		<!-- <mapping class="com.hibernate.Mappings.simple_mapping.Student"/> -->
+		<mapping class="com.hibernate.Mappings.simple_mapping.Student"/>
 		<!-- <mapping class="com.hibernate.Mappings.simple_mapping.Address"/> -->
 	</session-factory>
 </hibernate-configuration>

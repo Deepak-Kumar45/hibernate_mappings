@@ -26,6 +26,20 @@ public class Student
 	@Embedded
 	private Letter Letter;
 	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", course=" + course + ", lastUpdated=" + lastUpdated
+				+ ", Letter=" + Letter + "]";
+	}
+	public Student() {
+		super();
+	}
+	public Letter getLetter() {
+		return Letter;
+	}
+	public void setLetter(Letter letter) {
+		Letter = letter;
+	}
 	public Letter getAddress() {
 		return Letter;
 	}
