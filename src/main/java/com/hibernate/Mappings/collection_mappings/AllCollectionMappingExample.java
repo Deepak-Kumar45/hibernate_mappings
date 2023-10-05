@@ -1,5 +1,6 @@
 package com.hibernate.Mappings.collection_mappings;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="all_collection_mapping")
+@Table(name="allcollectionmappingexample")
 public class AllCollectionMappingExample 
 {
 	@Id
@@ -31,6 +32,12 @@ public class AllCollectionMappingExample
 	@Column(name="user_name")
 	private String name;
 	
+	@Override
+	public String toString() {
+		return  id + " | " + name + " | " + mailId + " | " + fees
+				+ " | " + dob + " | " + lastupdated;
+	}
+
 	@Column(name="mail_id")
 	private String mailId;
 	

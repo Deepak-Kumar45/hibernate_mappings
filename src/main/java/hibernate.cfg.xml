@@ -6,7 +6,7 @@
 	<session-factory>
 		<!-- Data source -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/hibernatedb2</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernatedb</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
 
@@ -17,6 +17,7 @@
 		<property name="hibernate.format_sql">true</property>
 
 		<!-- Pojo mapping -->
+		<!-- <mapping class="com.hibernate.Mappings.queryInterface.Product"/> -->
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Patient"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Doctor"/> -->
 		
@@ -42,10 +43,10 @@
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.PhoneNo"/> -->
 		
 		<!-- <mapping resource="mappings/one_to_many.hbm.xml" /> -->
-		<!-- <mapping class="com.hibernate.Mappings.collection_mappings.AllCollectionMappingExample"/> 
-			<mapping class="com.hibernate.Mappings.collection_mappings.Free"/> -->
+		<mapping class="com.hibernate.Mappings.collection_mappings.AllCollectionMappingExample"/> 
+<!-- 			<mapping class="com.hibernate.Mappings.collection_mappings.Free"/> -->
 		<!-- <mapping resource="mappings/collection_mapping.hbm.xml" /> -->
-		<mapping class="com.hibernate.Mappings.simple_mapping.Student"/>
+		<!-- <mapping class="com.hibernate.Mappings.simple_mapping.Student"/> -->
 		<!-- <mapping class="com.hibernate.Mappings.simple_mapping.Address"/> -->
 	</session-factory>
 </hibernate-configuration>
