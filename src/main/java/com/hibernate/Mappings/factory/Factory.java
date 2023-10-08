@@ -12,9 +12,12 @@ public class Factory {
 	}
 
 	public static Session getSession(){
-		return factory.openSession();
+		return factory.getCurrentSession();
 	}
 	
+	public static SessionFactory getSessionFactory() {
+		return factory;
+	}
 	public static void closeSession()
 	{
 		getSession().close();

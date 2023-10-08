@@ -8,6 +8,7 @@ import javax.persistence.Transient;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.hibernate.Mappings.factory.Factory;
 
@@ -15,6 +16,12 @@ public class ManyToOne {
 	public static void main(String[] args) {
 		Session ses=Factory.getSession();
 		Transaction tx=ses.beginTransaction();
+		
+		String str="from Product";
+		Query<Product> query=ses.createQuery(str);
+		query.list().forEach(i->System.out.println(i));
+		
+		
 //		Product p1=new Product("Shampoo", 2, new Date());
 //		
 //		Details d2=new Details("h1", new Date());
@@ -33,9 +40,9 @@ public class ManyToOne {
 //		System.out.println(p);
 //		System.out.println(p.getDetails());
 		
-		Details d=ses.get(Details.class, 1);
-		System.out.println(d);
-		System.out.println(d.getProduct());
+//		Details d=ses.get(Details.class, 1);
+//		System.out.println(d);
+//		System.out.println(d.getProduct());
 		tx.commit();
 		ses.close();
 	}

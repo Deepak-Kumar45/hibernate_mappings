@@ -31,6 +31,11 @@ public class Client
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date lastUpdated;
 	
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", name=" + name + ", address=" + address + ", lastUpdated=" + lastUpdated
+				+ ", phnNos=" + phnNos + "]";
+	}
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "id")
 	@Column(name = "Phone_no")

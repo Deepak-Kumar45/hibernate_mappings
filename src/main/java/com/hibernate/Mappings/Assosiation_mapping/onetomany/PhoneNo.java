@@ -15,6 +15,10 @@ public class PhoneNo
 	public long getNumber() {
 		return number;
 	}
+	@Override
+	public String toString() {
+		return "PhoneNo [number=" + number + ", provider=" + provider + ", noType=" + noType + "]";
+	}
 	public void setNumber(long number) {
 		this.number = number;
 	}

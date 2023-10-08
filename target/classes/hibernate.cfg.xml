@@ -15,15 +15,19 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>			
 
 		<!-- Pojo mapping -->
-		<!-- <mapping class="com.hibernate.Mappings.queryInterface.Product"/> -->
+		
+		<mapping class="com.hibernate.Mappings.hql_example.SampleDataEntity"/>
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Patient"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytomany.Doctor"/> -->
 		
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Product"/>
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Details"/>
-		 -->
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.manytoone.Details"/> -->
+		
 <!-- 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.bidirectional.Address"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.bidirectional.Student"/>
  -->		
@@ -37,13 +41,13 @@
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetoone.Student"/>
 		 -->
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.CricketTeam"/>
-		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Player"/>
-		 -->
+		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Player"/> -->
+		
 		<!-- <mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.Client"/>
 		<mapping class="com.hibernate.Mappings.Assosiation_mapping.onetomany.PhoneNo"/> -->
 		
 		<!-- <mapping resource="mappings/one_to_many.hbm.xml" /> -->
-		<mapping class="com.hibernate.Mappings.collection_mappings.AllCollectionMappingExample"/> 
+		<!-- <mapping class="com.hibernate.Mappings.collection_mappings.AllCollectionMappingExample"/> --> 
 <!-- 			<mapping class="com.hibernate.Mappings.collection_mappings.Free"/> -->
 		<!-- <mapping resource="mappings/collection_mapping.hbm.xml" /> -->
 		<!-- <mapping class="com.hibernate.Mappings.simple_mapping.Student"/> -->

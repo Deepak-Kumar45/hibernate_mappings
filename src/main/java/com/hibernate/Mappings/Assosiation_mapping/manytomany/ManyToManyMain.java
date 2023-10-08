@@ -7,6 +7,7 @@ import javax.print.Doc;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.hibernate.Mappings.factory.Factory;
 
@@ -17,6 +18,8 @@ public class ManyToManyMain {
 		Session session=Factory.getSession();
 		Transaction tx=session.beginTransaction();
 		
+		Query<Doctor> query=session.createQuery("from Doctor");
+		query.list().forEach(i->System.out.println(i));
 //		Doctor d1=new Doctor("Dr. singh", "Brain expert", new Date());
 //		Doctor d2=new Doctor("Dr. Prachi", "ENT expert", new Date());
 //		Doctor d3=new Doctor("Dr. Deeksha", "Dentist", new Date());
@@ -42,9 +45,9 @@ public class ManyToManyMain {
 //		System.out.println("Patients data has been successfully updated..");
 		
 		
-		Doctor d1=session.get(Doctor.class, 3);
-		System.out.println(d1);
-		System.out.println(d1.getPatients());
+//		Doctor d1=session.get(Doctor.class, 3);
+//		System.out.println(d1);
+//		System.out.println(d1.getPatients());
 		
 //		Patient p1=session.get(Patient.class, 3);
 //		System.out.println(p1);
