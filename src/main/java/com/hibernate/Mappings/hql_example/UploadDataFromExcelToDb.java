@@ -44,31 +44,24 @@ public class UploadDataFromExcelToDb {
 				
 				switch (cellIndex) {
 				case 0:
-//					System.out.println(cellIndex);
 					empid = cell.getStringCellValue();
 					break;
 				case 1:
-//					System.out.println(cellIndex);
 					name = cell.getStringCellValue();
 					break;
 				case 2:
-//					System.out.println(cellIndex);
 					desg = cell.getStringCellValue();
 					break;
 				case 3:
-//					System.out.println(cellIndex);
 					dept = cell.getStringCellValue();
 					break;
 				case 4:
-//					System.out.println(cellIndex);
 					gender = cell.getStringCellValue();
 					break;
 				case 5:
-//					System.out.println(cellIndex);
 					age = (int) cell.getNumericCellValue();
 					break;
 				case 6:
-//					System.out.println(cellIndex);
 					date = cell.getDateCellValue();
 					finalDate=new SimpleDateFormat("dd/MM/yyyy").format(date);
 					break;
