@@ -13,12 +13,21 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
 import org.hibernate.annotations.NaturalIdCache;
 
 @Entity
 @Table(name="tbl_upload_Data_From_excel")
 @Cacheable
 @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+@NamedQuery(name = "SDE_findEmpByName",query="from SampleDataEntity where name=:anyname")
+
+@NamedQueries({
+		@NamedQuery(name = "SDE_findEmpById",query = "from SampleDataEntity where empid=:anyid"),
+		@NamedQuery(name="SDE_deleteEmpById",query="delete from SampleDataEntity where empid=:anyid"),
+		@NamedQuery(name="SDE_updateDesgByName",query="update SampleDataEntity set desg=:newdesg where name=:anyname")
+})
 public class SampleDataEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
